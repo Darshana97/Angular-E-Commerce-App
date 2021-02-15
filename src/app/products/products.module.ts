@@ -7,10 +7,11 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ViewProductByCategoryComponent } from './view-product-by-category/view-product-by-category.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 
 @NgModule({
-  declarations: [ProductsComponent, AddProductComponent, ViewProductByCategoryComponent, ViewProductComponent, UpdateProductComponent],
+  declarations: [ProductsComponent, AddProductComponent, ViewProductByCategoryComponent, ViewProductComponent, UpdateProductComponent, DeleteProductComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule
