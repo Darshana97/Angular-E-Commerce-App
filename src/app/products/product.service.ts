@@ -7,29 +7,29 @@ import { Injectable } from '@angular/core';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  createProduct(productBody) {
+  createProduct(productBody: any) {
     const baseUrl = 'http://localhost:3000/product/';
     return this.httpClient.post(baseUrl, productBody);
   }
 
-  viewProduct(productId) {
+  viewProduct(productId: any) {
     const baseUrl = 'http://localhost:3000/product/' + productId;
     return this.httpClient.get(baseUrl);
   }
 
-  updateProduct(productId, productBody) {
+  updateProduct(productId: any, productBody: any) {
     const baseUrl = 'http://localhost:3000/product/' + productId;
     return this.httpClient.put(baseUrl, productBody);
   }
-  deleteProduct(productId) {
+  deleteProduct(productId: any) {
     const baseUrl = 'http://localhost:3000/product/' + productId;
     return this.httpClient.delete(baseUrl);
   }
-  searchCategoryProduct(categoryId) {
+  searchCategoryProduct(categoryId: any) {
     const baseUrl = 'http://localhost:3000/product/category=' + categoryId;
     return this.httpClient.get(baseUrl);
   }
-  searchDateProduct(dateParam) {
+  searchDateProduct(dateParam: any) {
     const baseUrl = 'http://localhost:3000/product/date=' + dateParam;
     return this.httpClient.get(baseUrl);
   }
