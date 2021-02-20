@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Product } from './product';
 
 @Injectable({
@@ -9,30 +9,30 @@ import { Product } from './product';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  createProduct(productBody: any) {
+  createProduct(productBody: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/';
-    return this.httpClient.post(baseUrl, productBody);
+    return this.httpClient.post<Product>(baseUrl, productBody);
   }
 
-  viewProduct(productId: any) {
+  viewProduct(productId: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/' + productId;
-    return this.httpClient.get(baseUrl);
+    return this.httpClient.get<Product>(baseUrl);
   }
 
-  updateProduct(productId: any, productBody: any) {
+  updateProduct(productId: any, productBody: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/' + productId;
-    return this.httpClient.put(baseUrl, productBody);
+    return this.httpClient.put<Product>(baseUrl, productBody);
   }
-  deleteProduct(productId: any) {
+  deleteProduct(productId: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/' + productId;
-    return this.httpClient.delete(baseUrl);
+    return this.httpClient.delete<Product>(baseUrl);
   }
-  searchCategoryProduct(categoryId: any) {
+  searchCategoryProduct(categoryId: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/category=' + categoryId;
-    return this.httpClient.get(baseUrl);
+    return this.httpClient.get<Product>(baseUrl);
   }
-  searchDateProduct(dateParam: any) {
+  searchDateProduct(dateParam: any): Observable<Product> {
     const baseUrl = 'http://localhost:3000/product/date=' + dateParam;
-    return this.httpClient.get(baseUrl);
+    return this.httpClient.get<Product>(baseUrl);
   }
 }
