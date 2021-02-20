@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
+import { Category } from '../site-layout/category';
 import { Product } from './product';
 
 @Injectable({
@@ -37,7 +38,7 @@ export class ProductService {
   }
 
   getCategory() {
-    const baseUrl = 'http://localhost:3000/categories';
-    return this.httpClient.get(baseUrl);
+    const categoryUrl = 'http://localhost:3000/categories';
+    return this.httpClient.get<Category>(categoryUrl);
   }
 }
