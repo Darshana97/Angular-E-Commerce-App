@@ -35,4 +35,9 @@ export class ProductService {
     const baseUrl = 'http://localhost:3000/product/date=' + dateParam;
     return this.httpClient.get<Product>(baseUrl);
   }
+
+  getCategory() {
+    const baseUrl = 'http://localhost:3000/categories';
+    return this.httpClient.get(baseUrl);
+  }
 }
