@@ -1,5 +1,6 @@
+<h1>Achi Shop</h1>
 <div class="list-group">
-  <a href="#" class="list-group-item">Category 1</a>
-  <a href="#" class="list-group-item">Category 2</a>
-  <a href="#" class="list-group-item">Category 3</a>
+  <a href="#" class="list-group-item" *ngFor="let catg of categoryList">{{
+    catg.categoryName
+  }}</a>
 </div>
