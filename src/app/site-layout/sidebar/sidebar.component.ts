@@ -8,7 +8,7 @@ import { Category } from '../category';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  categoryList: Category;
+  categoryList: Category = { categoryName: '', id: '' };
 
   constructor(private productService: ProductService) {}
 
